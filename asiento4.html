@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Codex - Asiento Contable #001</title>
+  <style>
+    body {
+      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      border: 3px dashed #2c3e50;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      color: #1abc9c;
+      animation: floatText 3s infinite alternate;
+      text-shadow: 0 0 5px #1abc9c;
+    }
+
+    .asiento-numero {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #e67e22;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      animation: buildTable 1s ease-in-out;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f39c12;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fcf3cf;
+    }
+
+    .importe {
+      font-weight: bold;
+      color: #27ae60;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    .glosa {
+      margin-top: 15px;
+      font-style: italic;
+      color: #8e44ad;
+      background: #fbeffb;
+      padding: 10px;
+      border-left: 5px solid #8e44ad;
+      animation: fadeIn 2s;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #27ae60; }
+      50% { text-shadow: 0 0 15px #2ecc71; }
+      100% { text-shadow: 0 0 5px #27ae60; }
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    @keyframes buildTable {
+      from { opacity: 0; transform: scaleY(0.5); }
+      to { opacity: 1; transform: scaleY(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Asiento Contable Codex</h1>
+    <div class="asiento-numero">Asiento Nº 001</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Cuenta</th>
+          <th>N° Cuenta</th>
+          <th>Debe</th>
+          <th>Haber</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">12/05/2025</td>
+          <td>Beneficios Sociales por pagar</td>
+          <td>415</td>
+          <td class="importe">1,500.00</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Cuentas Corrientes Operativas</td>
+          <td>1041</td>
+          <td></td>
+          <td class="importe">1,500.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="glosa">✏️ Glosa: Registro del depósito de la CTS al banco. ¡No olvides pagar a tiempo, contable explorador!</div>
+  </div>
+
+</body>
+</html>

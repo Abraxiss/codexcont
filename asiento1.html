@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asiento Contable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .diario {
+      border: 1px solid black;
+      padding: 15px;
+      width: 700px;
+      margin: auto;
+    }
+    .diario h2 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .diario p {
+      text-align: center;
+      margin-top: 0;
+      font-size: 14px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 6px;
+      text-align: left;
+      font-size: 14px;
+    }
+    .total {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+    .glosa {
+      padding-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<div class="diario">
+  <h2>Empresa Modelo S.A</h2>
+  <p>DIARIO GENERAL - Folio No. 1</p>
+
+  <table>
+    <tr>
+      <th>FECHA</th>
+      <th>DESCRIPCIÓN</th>
+      <th>REF.</th>
+      <th>DEBE</th>
+      <th>HABER</th>
+    </tr>
+    <tr>
+      <td rowspan="4">28-ago-20</td>
+      <td>Caja</td>
+      <td>1.1.1</td>
+      <td>3,000.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bancos</td>
+      <td>1.2.3</td>
+      <td>15,000.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Equipos de Computación</td>
+      <td>1.2.4</td>
+      <td>2,000.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>a) Capital</td>
+      <td>3.1.1</td>
+      <td></td>
+      <td>20,000.00</td>
+    </tr>
+    <tr class="glosa">
+      <td colspan="5">Para registrar los aportes del Sr. César Lara como nuevo socio de la Cía.</td>
+    </tr>
+    <tr class="total">
+      <td colspan="3">Totales</td>
+      <td>20,000.00</td>
+      <td>20,000.00</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>

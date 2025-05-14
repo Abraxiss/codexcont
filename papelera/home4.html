@@ -1,0 +1,150 @@
+<?php
+// Estructura base de PHP, útil para sesiones, autenticación, etc.
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Financiera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .chart-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      margin: 15px 0 5px;
+      text-align: center;
+      font-size: 20px;
+    }
+    #chart {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    nav.navbar-bottom {
+      background: #007BBD;
+    }
+    nav.navbar-bottom .nav-item button {
+      background: #fff;
+      color: #007BBD;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .add-button-wrapper {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #007BBD;
+      padding: 10px 0;
+    }
+    .add-button-wrapper .add-button {
+      background: #00A0E3;
+      color: #fff;
+      font-size: 26px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con avatar, nombre y menú -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+    <div class="d-flex align-items-center">
+      <img src="https://via.placeholder.com/40" alt="Avatar" class="rounded-circle me-2">
+      <div class="text-white">
+        <div>John Smith</div>
+        <small>Lorem ipsum</small>
+      </div>
+    </div>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Opción 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Opción 2</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow-1 d-flex flex-column justify-content-center align-items-center px-2">
+    <div class="chart-title">BALANCE GENERAL</div>
+    <div id="chart"></div>
+  </main>
+
+  <!-- Botón + -->
+  <div class="add-button-wrapper">
+    <button class="add-button">+</button>
+  </div>
+
+  <!-- Barra inferior -->
+  <nav class="navbar navbar-bottom">
+    <div class="container d-flex justify-content-around">
+      <div class="nav-item"><button>ES</button></div>
+      <div class="nav-item"><button>ER</button></div>
+      <div class="nav-item"><button>FC</button></div>
+      <div class="nav-item"><button>CP</button></div>
+    </div>
+  </nav>
+
+  <script>
+    var options = {
+      chart: {
+        type: 'bar',
+        height: 300,
+        stacked: true,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '35%',
+          barHeight: '100%',
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '12px'
+        },
+      },
+      series: [
+        {
+          name: 'Debe',
+          data: [52, 44, 10]
+        },
+        {
+          name: 'Haber',
+          data: [40, 50, 10]
+        }
+      ],
+      xaxis: {
+        categories: ['Caja', 'Mercadería', 'Bienes']
+      }
+    };
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

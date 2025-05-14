@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>App Financiera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- ApexCharts -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background-color: #fff;
+    }
+
+    .navbar-custom {
+      background-color: #007BBD;
+      color: white;
+    }
+
+    .chart-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      margin: 20px 0 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    #chart {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+
+    .bottom-nav {
+      background-color: #007BBD;
+      padding: 10px 0;
+    }
+
+    .bottom-nav .nav-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .bottom-nav .nav-link {
+      color: white;
+      font-size: 18px;
+    }
+
+    .bottom-nav .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+
+    @media (max-width: 576px) {
+      .nav-link span {
+        font-size: 12px;
+      }
+    }
+            /* Botón flotante */
+        .fab {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2196F3;
+            color: white;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-custom px-3">
+    <div class="d-flex align-items-center">
+      <img src="https://via.placeholder.com/40" alt="Avatar" class="rounded-circle me-2" width="40" height="40">
+      <div>
+        <strong>John Smith</strong><br>
+        <small>Partida Activa</small>
+      </div>
+    </div>
+    <button class="btn text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menuOpciones">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Menú colapsable -->
+  <div class="collapse px-3 pt-2" id="menuOpciones">
+    <ul class="list-group">
+      <li class="list-group-item">Configuración</li>
+      <li class="list-group-item">Perfil</li>
+      <li class="list-group-item">Cerrar sesión</li>
+    </ul>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
+    <div class="chart-title">BALANCE GENERAL</div>
+    <div id="chart"></div>
+  </main>
+
+
+
+    <!-- Botón flotante -->
+    <button class="fab">+</button>
+
+
+  <!-- Navegación Inferior -->
+  <nav class="navbar fixed-bottom bottom-nav">
+    <div class="container-fluid d-flex">
+      <div class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-file-invoice"></i><br><span>ES</span>
+        </a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-chart-line"></i><br><span>ER</span>
+        </a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-hand-holding-usd"></i><br><span>FC</span>
+        </a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-warehouse"></i><br><span>CP</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ApexCharts Script -->
+  <script>
+    var options = {
+      chart: {
+        type: 'bar',
+        height: 300,
+        stacked: true,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '50%',
+        },
+      },
+      dataLabels: {
+        enabled: true
+      },
+      series: [{
+        name: 'Activo',
+        data: [44, 55, 41]
+      }, {
+        name: 'Pasivo',
+        data: [13, 23, 20]
+      }, {
+        name: 'Patrimonio',
+        data: [11, 17, 15]
+      }],
+      xaxis: {
+        categories: ['Ene', 'Feb', 'Mar']
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

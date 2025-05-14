@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Codex Contable</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6cfd8.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wZn5QF/jLP6Zjwv2+XkHvD0j4eZFW9NBvlQ90yVuP8a2Fy0y2vKuwAL0VrbYxRaSsbjM1F9r+4lE6N8V60L6Cg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      background-color: #cfd4db;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .counter-box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .counter-icon {
+      font-size: 30px;
+      color: #27a8b2;
+    }
+    .counter-value {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 10px 0 0;
+    }
+    .counter-label {
+      font-weight: bold;
+      color: #27a8b2;
+      text-transform: uppercase;
+    }
+    .record-card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    }
+    .record-title {
+      margin: 0;
+      font-size: 16px;
+    }
+    .record-icon {
+      width: 40px;
+      height: 40px;
+      background: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .btn-icon {
+      font-size: 20px;
+      border: none;
+      background: transparent;
+    }
+    .btn-delete {
+      color: red;
+    }
+    .btn-check {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+  <!-- Top counters -->
+  <div class="row mb-4">
+    <div class="col-6">
+      <div class="counter-box">
+        <div class="counter-icon"><i class="fa-solid fa-newspaper"></i></div>
+        <div class="counter-value">3</div>
+        <div class="counter-label">Contadores</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="counter-box">
+        <div class="counter-icon"><i class="fas fa-layer-group" style="color: #7ec540;"></i></div>
+        <div class="counter-value" style="color: #7ec540;">15</div>
+        <div class="counter-label" style="color: #7ec540;">Asientos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diario -->
+  <h5 class="text-center fw-bold mb-3" style="font-family: 'Comic Sans MS', sans-serif;">– DIARIO –</h5>
+
+  <!-- Registro de ejemplo -->
+  <div class="record-card d-flex align-items-center">
+    <div class="d-flex align-items-center">
+      <div class="record-icon"><i class="fas fa-file-alt"></i></div>
+      <p class="record-title mb-0">Ventas al crédito</p>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <span class="badge bg-secondary fs-6">2</span>
+      <button class="btn-icon btn-delete"><i class="fas fa-trash"></i></button>
+      <button class="btn-icon btn-check"><i class="fas fa-check-circle"></i></button>
+    </div>
+  </div>
+
+  <!-- Puedes repetir el bloque anterior para más registros -->
+  <div class="record-card d-flex align-items-center">
+    <div class="d-flex align-items-center">
+      <div class="record-icon"><i class="fas fa-file-alt"></i></div>
+      <p class="record-title mb-0">Ventas al crédito</p>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <span class="badge bg-secondary fs-6">2</span>
+      <button class="btn-icon btn-delete"><i class="fas fa-trash"></i></button>
+      <button class="btn-icon btn-check"><i class="fas fa-check-circle"></i></button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

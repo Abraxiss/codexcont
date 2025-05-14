@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Financiera</title>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background: #007BBD;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .user-info div {
+      line-height: 1.2;
+    }
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .chart-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+    #chart {
+      width: 100%;
+      max-width: 350px;
+    }
+    .add-button {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00A0E3;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+    nav {
+      background: #007BBD;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    nav button {
+      background: #fff;
+      color: #007BBD;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="user-info">
+      <img src="https://via.placeholder.com/40" alt="Avatar">
+      <div>
+        <div>John Smith</div>
+        <small>Lorem ipsum</small>
+      </div>
+    </div>
+    <div class="menu-icon">&#9776;</div>
+  </header>
+
+  <main>
+    <div class="chart-title">BALANCE GENERAL</div>
+    <div id="chart"></div>
+    <button class="add-button">+</button>
+  </main>
+
+  <nav>
+    <button>ES</button>
+    <button>ER</button>
+    <button>FC</button>
+    <button>CP</button>
+  </nav>
+
+  <script>
+    var options = {
+      chart: {
+        type: 'bar',
+        height: 300,
+        stacked: true,
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '40%',
+          barHeight: '100%',
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        style: {
+          fontSize: '12px'
+        },
+        formatter: function (val, opts) {
+          return opts.w.globals.seriesNames[opts.seriesIndex] + "\n" + val + "%";
+        },
+      },
+      series: [
+        {
+          name: 'Caja',
+          data: [30, 0]
+        },
+        {
+          name: 'Mercadería',
+          data: [40, 0]
+        },
+        {
+          name: 'Bienes',
+          data: [30, 0]
+        },
+        {
+          name: 'Deuda',
+          data: [0, 50]
+        },
+        {
+          name: 'Capital',
+          data: [0, 35]
+        },
+        {
+          name: 'Resultado',
+          data: [0, 15]
+        },
+      ],
+      xaxis: {
+        categories: ['DEBE', 'HABER'],
+      },
+      colors: ['#00BCD4', '#8BC34A', '#FFC107', '#E91E63', '#9E9E9E', '#F44336']
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+  </script>
+</body>
+</html>

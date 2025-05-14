@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asiento Contable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+
+    .asiento-container {
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #333;
+      background: white;
+    }
+
+    .titulo {
+      background: #333;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    .asiento-linea {
+      border-top: 1px dashed #aaa;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td {
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+
+    .codigo {
+      width: 25%;
+      font-weight: bold;
+    }
+
+    .cuenta {
+      width: 55%;
+    }
+
+    .monto {
+      width: 20%;
+      text-align: right;
+    }
+
+    .descripcion {
+      padding: 8px;
+      font-style: italic;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="asiento-container">
+    <div class="titulo">ASIENTO CONTABLE</div>
+
+    <div class="asiento-linea">------------------ x ------------------</div>
+
+    <table>
+      <tr>
+        <td class="codigo">41</td>
+        <td class="cuenta">Remuneraciones y participaciones por pagar</td>
+        <td class="monto">1,500</td>
+      </tr>
+      <tr>
+        <td class="codigo">415</td>
+        <td class="cuenta">Beneficios sociales de los trabajadores por pagar</td>
+        <td class="monto"></td>
+      </tr>
+      <tr>
+        <td class="codigo">10</td>
+        <td class="cuenta">Efectivo y equivalentes de efectivo</td>
+        <td class="monto">1,500</td>
+      </tr>
+      <tr>
+        <td class="codigo">104</td>
+        <td class="cuenta">Cuentas corrientes en instituciones financieras</td>
+        <td class="monto"></td>
+      </tr>
+      <tr>
+        <td class="codigo">1041</td>
+        <td class="cuenta">Cuentas corrientes operativas</td>
+        <td class="monto"></td>
+      </tr>
+    </table>
+
+    <div class="descripcion">x/x Por el depósito de la CTS.</div>
+    <div class="asiento-linea">------------------ x ------------------</div>
+  </div>
+
+</body>
+</html>

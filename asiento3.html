@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asiento Contable</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    .contenedor {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 40px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .encabezado {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .encabezado h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .encabezado p {
+      margin: 3px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .info-asiento {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .info-asiento span {
+      display: inline-block;
+      width: 220px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e0e0e0;
+    }
+
+    .glosa {
+      margin-top: 10px;
+      font-style: italic;
+      color: #333;
+    }
+
+    .totales {
+      font-weight: bold;
+      background-color: #f1f1f1;
+    }
+
+    .firmas {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    .firmas div {
+      text-align: center;
+      width: 45%;
+      border-top: 1px solid #000;
+      padding-top: 8px;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .contenedor {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+
+      .firmas {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="encabezado">
+    <h2>EMPRESA MODELO S.A.C.</h2>
+    <p>RUC: 20123456789</p>
+    <p>Av. Los Negocios 123 - Lima, Perú</p>
+  </div>
+
+  <div class="info-asiento">
+    <p><span>Asiento N°:</span> 000145</p>
+    <p><span>Fecha:</span> 12/05/2025</p>
+    <p><span>Tipo de asiento:</span> Diario General</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cuenta</th>
+        <th>Descripción</th>
+        <th>Referencia</th>
+        <th>Debe (S/)</th>
+        <th>Haber (S/)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td>Caja</td>
+        <td>1.1.1</td>
+        <td>1,500.00</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>415</td>
+        <td>CTS por pagar</td>
+        <td>4.1.2</td>
+        <td></td>
+        <td>1,500.00</td>
+      </tr>
+      <tr class="totales">
+        <td colspan="3">Totales</td>
+        <td>1,500.00</td>
+        <td>1,500.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="glosa">Glosa: Por el registro del depósito de la CTS correspondiente al mes de mayo.</p>
+
+  <div class="firmas">
+    <div>Elaborado por</div>
+    <div>Revisado y aprobado</div>
+  </div>
+</div>
+
+</body>
+</html>
